@@ -1,0 +1,7 @@
+.logo {
+  background: url('../images/cloudkinetics-logo.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 45px;
+  margin-bottom: 10px;
+}

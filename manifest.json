@@ -1,0 +1,45 @@
+{
+  "platform-version": "2.2",
+  "product": {
+    "freshdesk": {
+      "location": {
+        "cti_global_sidebar": {
+          "url": "index.html",
+          "icon": "icon.svg"
+        },
+        "ticket_sidebar": {
+          "url": "sideapp.html",
+          "icon": "icon.svg"
+        }
+      },
+      "functions": {
+        "getContactList": {
+          "timeout": 10
+        },
+        "addContact":{
+          "timeout":10
+        },
+        "createTicket":{
+          "timeout":10
+        },
+        "addEndCallNote":{
+          "timeout":10
+        },
+        "addNote":{
+          "timeout":10
+        },
+        "getContactInfo":{
+          "timeout":10
+        }
+        
+      }
+    }
+  },
+  "whitelisted-domains": [
+    "https://*.freshdesk.com"
+  ],
+  "engines": {
+    "node": "12.22.0",
+    "fdk": "7.1.0"
+  }
+}

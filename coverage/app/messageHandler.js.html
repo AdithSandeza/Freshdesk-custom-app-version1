@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\messageHandler.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> messageHandler.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>84/120</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.41% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>27/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.49% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>82/118</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</td><td class="line-coverage quiet"><span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">187×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">187×</span>
+<span class="cline-any cline-yes">187×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">187×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">148×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">141×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">134×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var messageHandler = function(client,accountDetails){
+    
+    return function(event) {
+        event = event.data;
+&nbsp;
+        var messageData = {};
+        var wn = this.window.document.getElementById('ifrm');
+&nbsp;
+        if(event.action == "agentConnected") {
+            event.accountDetails = accountDetails;
+            client.request.invoke("getContactList", event).then(
+                function(data) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if(data.status == 200){
+                        let contacts = data.message;
+                        messageData.action = "calllogs";
+                        messageData.contactList = contacts;
+                        messageData.callData = null;
+                        messageData.language = 'en' ;
+                        messageData.countrySelected = '{\"code\":\"1\",\"name\":\"+1 - UnitedStates\",\"flag\":\"flag-icon-us\"}';                               
+&nbsp;
+                        client.db.get(event.agentId).then (
+                            function(data) {
+                                console.log(data.callHistory)
+                                let data2 = data.callHistory;
+                                let callData = [...new Set(data2.map((o) =&gt; JSON.stringify(o))),].map((string) =&gt; JSON.parse(string));
+                                messageData.callData = callData;
+                                console.log(callData)
+&nbsp;
+                                messageData.language = data.language ? <span class="branch-0 cbranch-no" title="branch not covered" >data.language </span>: 'en' ;
+                                messageData.countrySelected = data.countrySelected ? data.countrySelected : '{\"code\":\"1\",\"name\":\"+1 - UnitedStates\",\"flag\":\"flag-icon-us\"}';
+                                wn.contentWindow.postMessage(messageData, "*");
+                            },
+                            function(error) <span class="fstat-no" title="function not covered" >{</span>
+                                wn.contentWindow.postMessage(messageData, "*");
+                                console.log(error)
+                        });
+                    }
+                });
+&nbsp;
+        } else if (event.action == "inboundCall") {
+            var callHistory = [];
+            var callLog = {}
+            callLog.callType = "inbound"
+            callLog.contactId = event.contactId;
+            callLog.contactName = event.contactName;
+            callLog.contactNumber = event.contactNumber;
+            callLog.calledTime = event.calledTime;
+            callHistory.push(callLog);
+            client.db.update( event.agentId, "append", { "callHistory": callHistory })
+        } else if (event.action == "missedcall") {
+            var callHistory = [];
+            var callLog = {}
+            callLog.callType = "Missed"
+            callLog.contactId = event.contactId;
+            callLog.contactName = event.contactName;
+            callLog.contactNumber = event.contactNumber;
+            callLog.calledTime = event.calledTime;
+            callHistory.push(callLog);
+            client.db.update( event.agentId, "append", { "callHistory": callHistory })
+        } else if (event.action == "outboundCall") {
+            var callHistory = [];
+            var callLog = {}
+            callLog.callType = "outbound"
+            callLog.contactId = event.contactId;
+            callLog.contactName = event.contactName;
+            callLog.contactNumber = event.contactNumber;
+            callLog.calledTime = event.calledTime;
+            callHistory.push(callLog);
+            client.db.update( event.agentId, "append", { "callHistory": callHistory })
+        } else if (event.action == "incomingCall") {
+            client.interface.trigger("show", {'id': "softphone"})
+        } else if (event.action == "openTicket") {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            client.interface.trigger("click", {id: "ticket",value: event.ticketId })</span>
+<span class="cstat-no" title="statement not covered" >            client.interface.trigger("hide", {id: "softphone"})</span>
+&nbsp;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (event.action == "openContact") {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            client.interface.trigger("click", {id: "contact",value: event.contactId })</span>
+<span class="cstat-no" title="statement not covered" >            client.interface.trigger("hide", {id: "softphone"})</span>
+&nbsp;
+        } else if (event.action == "endcall") {
+            event.accountDetails = accountDetails;
+            client.request.invoke("addEndCallNote", event).then(
+            function() {
+                client.interface.trigger("showNotify", {
+                    type: "success",
+                    message: "Endcall Notes added in ticket #" + event.ticketId
+                })
+            },
+            function() {
+                client.interface.trigger("showNotify", {
+                    type: "warning",
+                    message: "Select any one of the ticket before ending call to add endcall notes"
+                })
+            });
+&nbsp;
+            client.interface.trigger("hide", {id: "softphone"})
+&nbsp;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (event.action == "addNote") {
+<span class="cstat-no" title="statement not covered" >            event.accountDetails = accountDetails;</span>
+<span class="cstat-no" title="statement not covered" >            client.request.invoke("addNote", event).then(</span>
+            function() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("showNotify", {</span>
+                    type: "success",
+                    message: "Call Notes added in ticket #" + event.ticketId
+                })
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("hide", {id: "softphone"})</span>
+<span class="cstat-no" title="statement not covered" >                messageData.action = "createNoteSuccess";</span>
+<span class="cstat-no" title="statement not covered" >                messageData.status = "success";</span>
+<span class="cstat-no" title="statement not covered" >                wn.contentWindow.postMessage(messageData, "*");</span>
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("click", {id: "ticket",value: event.ticketId })</span>
+            },function()<span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("showNotify", {</span>
+                    type: "danger",
+                    message: "Adding call notes failed"
+                })
+<span class="cstat-no" title="statement not covered" >                messageData.action = "createNoteFail";</span>
+<span class="cstat-no" title="statement not covered" >                wn.contentWindow.postMessage(messageData, "*");</span>
+            });
+&nbsp;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (event.action == "addContact") {
+<span class="cstat-no" title="statement not covered" >            event.accountDetails = accountDetails;</span>
+<span class="cstat-no" title="statement not covered" >            client.request.invoke("addContact", event).then(</span>
+            function(data) <span class="fstat-no" title="function not covered" >{</span>
+                client.interface.trigger("click", {id: "contact",value: data.message.id })
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("showNotify", {</span>
+                    type: "success",
+                    message: "Added to contacts sucessfully"
+                })
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("hide", {id: "softphone"})</span>
+                let callLog = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >                callLog.contactId = data.message.id;</span>
+<span class="cstat-no" title="statement not covered" >                callLog.contactName = event.contactName;</span>
+<span class="cstat-no" title="statement not covered" >                callLog.contactNumber = event.contactNumber;</span>
+                
+<span class="cstat-no" title="statement not covered" >                messageData.action = "createContactSuccess";</span>
+<span class="cstat-no" title="statement not covered" >                messageData.status = "success";</span>
+<span class="cstat-no" title="statement not covered" >                wn.contentWindow.postMessage(messageData, "*");</span>
+            }, function()<span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                client.interface.trigger("showNotify", {</span>
+                    type: "danger",
+                    message: "Failed to create contact"
+                })
+<span class="cstat-no" title="statement not covered" >                messageData.action = "createContactFail";</span>
+<span class="cstat-no" title="statement not covered" >                wn.contentWindow.postMessage(messageData, "*");</span>
+            });
+&nbsp;
+        } else if (event.action == "createTicket") {
+            event.accountDetails = accountDetails;
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if(event.callingName == "Unknown Caller") {
+                window.open(accountDetails.freshdeskURL + "/a/tickets/new");
+<span class="cstat-no" title="statement not covered" >                messageData.action = "createTicketFail";</span>
+                wn.contentWindow.postMessage(messageData, "*");
+            } else {
+&nbsp;
+                client.request.invoke("createTicket", event).then(
+                function(data) {
+                    client.interface.trigger("showNotify", {
+                        type: "success",
+                        message: "New ticket created sucessfully"
+                    })
+                    messageData.action = "createTicketSuccess";
+                    messageData.ticket_id = data.message;
+                    wn.contentWindow.postMessage(messageData, "*");
+                }, function()<span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                    messageData.action = "createTicketFail";</span>
+<span class="cstat-no" title="statement not covered" >                    wn.contentWindow.postMessage(messageData, "*");</span>
+<span class="cstat-no" title="statement not covered" >                    client.interface.trigger("showNotify", {</span>
+                        type: "danger",
+                        message: "Failed to create New ticket"
+                    })
+<span class="cstat-no" title="statement not covered" >                    messageData.action = "createTicketFail";</span>
+<span class="cstat-no" title="statement not covered" >                    wn.contentWindow.postMessage(messageData, "*");</span>
+                });
+&nbsp;
+            }
+&nbsp;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (event.action == "languageChange") {
+<span class="cstat-no" title="statement not covered" >            client.db.update( event.agentId, "set", { "language": event.language })</span>
+        } else if (event.action == "countryChange") {
+            client.db.update( event.agentId, "set", { "countrySelected": event.countrySelected })
+        }
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Mar 07 2022 13:47:52 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
